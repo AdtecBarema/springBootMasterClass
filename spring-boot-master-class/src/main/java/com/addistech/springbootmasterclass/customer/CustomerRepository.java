@@ -14,4 +14,9 @@ public class CustomerRepository implements CustomerRepo{
         //TODO connect to real DB
         return Collections.singletonList(new Customer(100L,"Todo implement real DB","todo"));
     }
+    @Override
+    public  Customer getCustomer(){
+        //TODO
+        return new Customer(10L, "New Customer ","new Password");
+    }
 }
