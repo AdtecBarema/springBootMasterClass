@@ -9,8 +9,7 @@ public class CustomerService {
 
     private final  CustomerRepo customerRepo;
 
-    public CustomerService(
-            @Qualifier("fake") CustomerRepo customerRepo){
+    public CustomerService(CustomerRepo customerRepo){
         this.customerRepo = customerRepo;
     }
 
