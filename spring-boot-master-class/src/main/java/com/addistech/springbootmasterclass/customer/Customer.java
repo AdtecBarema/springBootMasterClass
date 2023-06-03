@@ -2,12 +2,8 @@ package com.addistech.springbootmasterclass.customer;
 
 public class Customer {
 
-
     private final Long id;
-
-
     private final String name;
-
     Customer(Long id, String name) {
         this.id = id;
         this.name = name;

@@ -1,11 +1,20 @@
 package com.addistech.springbootmasterclass.customer;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CustomerService {
-    Customer getCustomer(){
-        return  new Customer(1L,"James");
+
+    private final  CustomerRepo customerRepo;
+
+    public CustomerService(
+            @Qualifier("fake") CustomerRepo customerRepo){
+        this.customerRepo = customerRepo;
     }
 
+    List<Customer> getCustomer(){
+        return  customerRepo.getCustomers();
+    }
 }
