@@ -14,4 +14,11 @@ public class CustomerFakeRepository implements  CustomerRepo {
                 new Customer(100L, "Arsema Yohannes","Arsema"),
                 new Customer(101L, "Hanna Addis","Addis"));
     }
+
+    @Override
+    public  Customer getCustomer(){
+        //TODO
+        return new Customer(10L, "New Customer ","new Password");
+    }
+
 }
