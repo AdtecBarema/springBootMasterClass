@@ -12,11 +12,11 @@ public class CustomerRepository implements CustomerRepo{
     @Override
     public List<Customer> getCustomers(){
         //TODO connect to real DB
-        return Collections.singletonList(new Customer(100L,"Todo implement real DB","todo"));
+        return Collections.singletonList(new Customer(100L,"Todo implement real DB","todo","email"));
     }
     @Override
     public  Customer getCustomer(){
         //TODO
-        return new Customer(10L, "New Customer ","new Password");
+        return new Customer(10L, "New Customer ","new Password","email");
     }
 }

@@ -1,8 +1,8 @@
 package com.addistech.springbootmasterclass.customer;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,17 +19,16 @@ public class CustomerControllerV2 {
 
     @GetMapping(value = "all")
     List<Customer> getCustomers() {
-        return Arrays.asList(new Customer(100L, "Biniam", "BinyDess"));
+        return Arrays.asList(new Customer(100L, "Biniam", "BinyDess","Binyemail@gmail.com"));
     }
 
     @GetMapping(path = "{customerId}")
     public Customer getCustomer(@PathVariable("customerId") Long id) {
         return customerService.getCustomer(id);
-
     }
 
     @PostMapping("/")
-    public void createNewCustomer(@RequestBody Customer customer) {
+    public void createNewCustomer(@RequestBody @Valid  Customer customer) {
         System.out.println("POST request..." + customer);
     }
 

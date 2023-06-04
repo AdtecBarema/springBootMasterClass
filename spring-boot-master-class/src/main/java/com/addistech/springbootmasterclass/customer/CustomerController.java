@@ -1,5 +1,6 @@
 package com.addistech.springbootmasterclass.customer;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/customer")
-
+@Deprecated
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -34,7 +35,7 @@ public class CustomerController {
     }
 
     @PutMapping("/")
-    public void updateCustomer(@RequestBody Customer customer) {
+    public void updateCustomer(@RequestBody @Valid  Customer customer) {
         System.out.println("Put Update customer request... "+customer);
     }
 
